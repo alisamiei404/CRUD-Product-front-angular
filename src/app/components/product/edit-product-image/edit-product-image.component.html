@@ -1,0 +1,32 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<div class="col-10 col-md-8 col-lg-6 mx-auto shadow p-5 mt-3" *ngIf="!loading">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <p>عکس فعلی</p>
+      <img src="http://localhost:8000/images/{{ product.image }}" *ngIf="product.image" width="100" alt="">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">عکس جدید</label>
+      <input type="file" accept="image/*" (change)="selectFile($event)" class="form-control d-l" name="image" formControlName="image">
+      <span 
+      *ngIf="itemForm.get('image')?.touched"
+      class="text-danger form-text">
+        <span>{{imageError}}</span>
+      </span>
+      <span 
+      *ngIf="itemForm.get('image')?.touched && !itemForm.get('image')?.valid"
+      class="text-danger form-text">
+        <span *ngIf="itemForm.get('image')?.errors!['required']">این فیلد نمیتواند خالی باشد!</span>
+      </span>
+      <br>
+      <span class="text-danger form-text" *ngIf="errors && errors.image && itemForm.get('image')?.valid">{{ errors.image[0] }}</span>
+    </div>
+    <div class="mb-3">
+      <img [src]="preview" class="preview" width="100" alt="">
+    </div>
+    <button type="submit" class="btn btn-primary px-5" [disabled]="!itemForm.valid" *ngIf="!btnLoading">ارسال</button>
+    <button type="submit" class="btn btn-primary px-5" disabled *ngIf="btnLoading">
+      <span class="spinner-border spinner-border-sm"></span> 
+    </button>
+  </form>
+</div>

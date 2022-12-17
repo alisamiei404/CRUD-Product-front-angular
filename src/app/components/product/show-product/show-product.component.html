@@ -1,0 +1,20 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<div class="col-12 col-md-9 col-lg-8 mx-auto shadow rounded p-3 mt-3 table-responsive" *ngIf="!loading">
+  <h5>نام محصول</h5>
+  <h5 class="ms-3">{{ product.title }}</h5>
+  <hr>
+  <h5>اسلاگ محصول</h5>
+  <h5 class="ms-3">{{ product.slug }}</h5>
+  <hr>
+  <p>عکس محصول</p>
+  <img src="http://localhost:8000/images/{{ product.image }}" *ngIf="product.image" width="100" alt="">
+  <hr>
+  <p>قیمت محصول</p>
+  <p class="number ms-3">{{ product.price }}</p>
+  <hr>
+  <p>تعداد محصول</p>
+  <p class="number ms-3">{{ product.count }}</p>
+  <hr>
+  <p>وضعیت محصول</p>
+  <p class="ms-3">{{ product.status ? 'موجود' : 'ناموجود' }}</p>
+</div>

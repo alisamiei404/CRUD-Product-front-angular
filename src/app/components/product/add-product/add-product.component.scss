@@ -1,0 +1,22 @@
+.d-l {
+  direction: ltr;
+}
+
+.d-r {
+  direction: rtl;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 2px solid #86b7fe;
+}
+
+.preview {
+  width: 50px;
+  
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+

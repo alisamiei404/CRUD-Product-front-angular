@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Vazir';
+  src: url('./assets/fonts/Vazir.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iran';
+  src: url('./assets/fonts/IRANSansWeb_Medium.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    // font-size: 62.5%;
+}
+
+body {
+  font-family: 'Vazir' !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+
+
+
+
+@media (max-width: 768px){
+  .dropdown-menu{
+    background-color: transparent;
+    border: none;
+  }
+  
+  .dropdown-item{
+    color: white;
+  }
+
+  .dropdown-item:focus, .dropdown-item:hover {
+    color: white;
+    background-color: transparent;
+  }
+}
+
